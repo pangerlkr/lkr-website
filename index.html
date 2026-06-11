@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth Alliance Nagaland</title>
+    <meta
+      name="description"
+      content="Earth Alliance Nagaland — an environment-focused NGO protecting forests, water, and communities through collective action."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <div class="brand">Earth Alliance Nagaland</div>
+      <nav class="site-nav">
+        <a href="#mission">Mission</a>
+        <a href="#impact">Impact</a>
+        <a href="#join">Join Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="content">
+          <p class="eyebrow">Environment Focused NGO</p>
+          <h1>Protecting Nagaland's Future Through Collective Climate Action</h1>
+          <p>
+            We restore forests, secure clean water, and empower communities with data-driven and
+            grassroots environmental programs.
+          </p>
+          <a href="#join" class="cta">Become a Volunteer</a>
+        </div>
+      </section>
+
+      <section class="section card-section" id="mission">
+        <div class="card reveal">
+          <h2>Our Mission</h2>
+          <p>
+            To build a resilient, biodiversity-rich Nagaland by partnering with villages, youth,
+            and institutions for sustainable land and water stewardship.
+          </p>
+        </div>
+        <div class="card reveal">
+          <h2>Core Programs</h2>
+          <ul>
+            <li>Forest restoration & native species nurseries</li>
+            <li>River and spring rejuvenation</li>
+            <li>Climate literacy in schools and communities</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section card-section" id="impact">
+        <div class="card reveal">
+          <h2>Impact Snapshot</h2>
+          <div class="stats">
+            <div><strong>120K+</strong><span>Trees planted</span></div>
+            <div><strong>35</strong><span>Villages partnered</span></div>
+            <div><strong>18</strong><span>Streams revived</span></div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h2>How We Work</h2>
+          <p>
+            We blend local ecological knowledge with geospatial monitoring, ensuring each
+            intervention is transparent, measurable, and community-owned.
+          </p>
+        </div>
+      </section>
+
+      <section class="section join" id="join">
+        <div class="content reveal">
+          <h2>Join Earth Alliance Nagaland</h2>
+          <p>
+            Support restoration drives, climate campaigns, and policy advocacy. Together, we can
+            create lasting environmental resilience.
+          </p>
+          <a class="cta" href="mailto:contact@earthalliancenagaland.org">Partner With Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© <span id="year"></span> Earth Alliance Nagaland</footer>
+
+    <script src="https://unpkg.com/three@0.165.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
