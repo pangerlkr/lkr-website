@@ -70,7 +70,7 @@
   };
   render();
 
-  if (window.gsap && typeof ScrollTrigger !== 'undefined') {
+  if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(starField.rotation, {
