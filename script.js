@@ -1,4 +1,8 @@
 (() => {
+  const LOW_POWER_CORE_THRESHOLD = 4;
+  const LOW_POWER_POINTS = 2500;
+  const STANDARD_POINTS = 4000;
+
   const canvas = document.getElementById('bg-canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const scene = new THREE.Scene();
@@ -11,7 +15,10 @@
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const pointsGeom = new THREE.BufferGeometry();
-  const pointsCount = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4 ? 2500 : 4000;
+  const pointsCount =
+    navigator.hardwareConcurrency && navigator.hardwareConcurrency <= LOW_POWER_CORE_THRESHOLD
+      ? LOW_POWER_POINTS
+      : STANDARD_POINTS;
   const points = new Float32Array(pointsCount * 3);
 
   for (let i = 0; i < pointsCount * 3; i += 3) {
@@ -60,7 +67,6 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
   };
 
-  resize();
   window.addEventListener('resize', resize);
 
   const render = () => {
