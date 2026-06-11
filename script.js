@@ -7,11 +7,10 @@
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.z = 4.5;
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const pointsGeom = new THREE.BufferGeometry();
-  const pointsCount = 4500;
+  const pointsCount = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4 ? 2500 : 4000;
   const points = new Float32Array(pointsCount * 3);
 
   for (let i = 0; i < pointsCount * 3; i += 3) {
@@ -56,9 +55,11 @@
   const resize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
   };
 
+  resize();
   window.addEventListener('resize', resize);
 
   const render = () => {
@@ -108,6 +109,8 @@
         },
       });
     });
+  } else {
+    console.warn('GSAP ScrollTrigger is unavailable; scroll animations were skipped.');
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
